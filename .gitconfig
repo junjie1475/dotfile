@@ -1,0 +1,13 @@
+[user]
+	name = junjie1475
+	email = junjie1475@gmail.com
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	graph = log --all --graph --decorate --oneline
