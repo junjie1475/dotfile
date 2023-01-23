@@ -11,3 +11,5 @@
 	ci = commit
 	st = status
 	graph = log --all --graph --decorate --oneline
+[pull]
+	rebase = false
