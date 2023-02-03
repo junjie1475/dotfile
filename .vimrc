@@ -92,29 +92,9 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-set tabstop=3
-
+set tabstop=2
+set shiftwidth=2
 set autoindent
-
-set clipboard=unnamedplus
-
-function! OscCopy()
-  let encodedText=@"
-  let encodedText=substitute(encodedText, '\', '\\\\', "g")
-  let encodedText=substitute(encodedText, "'", "'\\\\''", "g")
-  let executeCmd="echo -n '".encodedText."' | base64 | tr -d '\\n'"
-  let encodedText=system(executeCmd)
-  if $TMUX != ""
-    "tmux
-     let executeCmd='echo -en "\x1bPtmux;\x1b\x1b]52;;'.encodedText.'\x1b\x1b\\\\\x1b\\" > /dev/tty'
-  else
-     let executeCmd='echo -en "\x1b]52;;'.encodedText.'\x1b\\" > /dev/tty'
-  endif
-  call system(executeCmd)
-  redraw!
-  endfunction
-command! OscCopy :call OscCopy()
-
 
 call plug#begin()
 Plug 'pechorin/any-jump.vim'
