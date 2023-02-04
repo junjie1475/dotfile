@@ -95,6 +95,7 @@ let &t_EI = "\e[2 q"
 set tabstop=2
 set shiftwidth=2
 set autoindent
+set pastetoggle=<F3>
 
 call plug#begin()
 Plug 'pechorin/any-jump.vim'
